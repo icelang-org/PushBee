@@ -180,7 +180,11 @@ namespace PushBee
 
             if (TryFindResource("FadeOut") is Storyboard anim)
             {
-                anim.Completed += (s, e) => RaiseEvent(new RoutedEventArgs(ClosedEvent));
+                if (anim.IsFrozen)
+                {
+                    anim = anim.Clone();
+                    anim.Completed += (s, e) => RaiseEvent(new RoutedEventArgs(ClosedEvent));
+                } 
                 anim.Begin(this);
             }
             else
