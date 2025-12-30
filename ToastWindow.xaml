@@ -10,7 +10,7 @@
         AllowsTransparency="True" Background="Transparent"
         Topmost="True" ShowInTaskbar="False"
         Title="ToastWindow" Height="Auto" Width="350" SizeToContent="Height">
-    
-    <local:Toast x:Name="ToastControl" />
+
+    <local:Toast x:Name="ToastControl"  NotificationType="Success" Message="Hello" />
 
 </Window>

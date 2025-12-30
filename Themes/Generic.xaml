@@ -63,7 +63,7 @@
 
                             <!-- Message -->
                             <TextBlock Grid.Column="1" 
-                                       Text="{TemplateBinding Content}"
+                                       Text="{TemplateBinding Message}"
                                        TextWrapping="Wrap"
                                        VerticalAlignment="Center"/>
 

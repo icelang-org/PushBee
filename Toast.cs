@@ -7,7 +7,7 @@ using System.Windows.Threading;
 
 namespace PushBee
 {
-    public class Toast : ContentControl
+    public class Toast : Control
     {
         private DispatcherTimer? _autoCloseTimer;
 
@@ -54,6 +54,15 @@ namespace PushBee
             get { return (Geometry)GetValue(IconDataProperty); }
             private set { SetValue(IconDataProperty, value); }
         }
+
+        public string Message
+        {
+            get { return (string)GetValue(MessageProperty); }
+            set { SetValue(MessageProperty, value); }
+        }
+        
+        public static readonly DependencyProperty MessageProperty =
+            DependencyProperty.Register(nameof(Message), typeof(string), typeof(Toast), new PropertyMetadata(null));
 
         public static readonly DependencyProperty IconFillProperty = DependencyProperty.Register(
             nameof(IconFill), typeof(Brush), typeof(Toast), new PropertyMetadata(Brushes.Blue));

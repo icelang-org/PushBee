@@ -14,7 +14,7 @@ namespace PushBee
             InitializeComponent();
             
             // 将逻辑委托给 Toast 控件
-            ToastControl.Content = message;
+            ToastControl.Message = message;
             ToastControl.NotificationType = type;
             
             // 当 Toast 控件关闭时，关闭窗口
